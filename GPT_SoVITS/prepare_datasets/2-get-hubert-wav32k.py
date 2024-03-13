@@ -115,6 +115,7 @@ if(len(nan_fails)>0 and is_half==True):
     model=model.float()
     for wav_name in nan_fails:
         try:
-            name2go(wav_name)
+            wav_path = "%s/%s"%(inp_wav_dir, wav_name)
+            name2go(wav_name, wav_path)
         except:
             print(wav_name,traceback.format_exc())
